@@ -5,8 +5,7 @@ from fpdf import FPDF
 from streamlit_gsheets import GSheetsConnection
 
 # --- APP CONFIGURATION (Mobile Optimized) ---
-st.set_page_config(page_title="Sudantam Cloud", page_icon="🦷", layout="wide", initial_sidebar_state="collapsed")
-
+st.set_page_config(page_title="Sudantam Clinic", page_icon="logo.jpeg", layout="wide", initial_sidebar_state="collapsed")
 # --- THEME & CSS ---
 PRIMARY = "#2C7A6F"
 SECONDARY = "#F0F8F5"
