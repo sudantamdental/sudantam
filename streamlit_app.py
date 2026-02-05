@@ -5,10 +5,26 @@ from fpdf import FPDF
 from streamlit_gsheets import GSheetsConnection
 
 # --- APP CONFIGURATION (Mobile Optimized) ---
-st.set_page_config(page_title="Sudantam Clinic", page_icon="logo.jpeg", layout="wide", initial_sidebar_state="collapsed")
-# --- THEME & CSS ---
-PRIMARY = "#2C7A6F"
-SECONDARY = "#F0F8F5"
+import streamlit as st
+import pandas as pd
+import datetime
+from PIL import Image
+from streamlit_gsheets import GSheetsConnection
+
+# --- LOAD ICON ROBUSTLY ---
+try:
+    # We use the exact filename you provided
+    icon_img = Image.open("Final Logo_Vertical Color 2.png")
+except:
+    icon_img = "🦷" # Fallback if file is missing
+
+# --- APP SETUP ---
+st.set_page_config(
+    page_title="Sudantam Clinic",
+    page_icon=icon_img,
+    layout="wide",
+    initial_sidebar_state="collapsed"
+)
 
 st.markdown(f"""
 <style>
@@ -138,3 +154,4 @@ elif choice == "🔍 Search":
         st.dataframe(df[mask])
     else:
         st.dataframe(df)
+
